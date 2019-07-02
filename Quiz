@@ -4,7 +4,7 @@ from tkinter import messagebox
 
 root = Tk()
 root.title("Quiz")
-root.geometry("300x400")
+root.geometry("450x300")
 
 def que_one():
     question1 = Label(root, text = "I do not have wings, but I can fly. I don’t have eyes, but I can cry! What am I?")
