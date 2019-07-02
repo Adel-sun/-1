@@ -1,0 +1,50 @@
+from tkinter import *
+from tkinter import messagebox
+
+
+root = Tk()
+root.title("Quiz")
+root.geometry("300x400")
+
+def que_one():
+    question1 = Label(root, text = "I do not have wings, but I can fly. I don’t have eyes, but I can cry! What am I?")
+    answer1 = Entry()
+    btn1 = Button(root, text = 'Reply', command = lambda: game1(que_two))
+    question1.grid()
+    answer1.grid()
+    btn1.grid()
+    def game1(que_two):
+        if answer1.get().lower() == "cloud":
+            que_two()
+        else:
+            messagebox.showerror('Mistake!', 'Try again!')
+
+def que_two():
+    question2 = Label(root, text="If I drink, I die. If I eat, I am fine. What am I?")
+    answer2 = Entry()
+    btn2 = Button(root, text='Reply', command = lambda: game2(que_three))
+    question2.grid()
+    answer2.grid()
+    btn2.grid()
+    def game2(que_three):
+        if answer2.get().lower() == "fire":
+            que_three()
+        else:
+            messagebox.showerror("Mistake!", "Try again!")
+
+
+def que_three():
+    question3 = Label(root, text="For what person do all men take off their hats?")
+    answer3 = Entry()
+    btn3 = Button(root, text='Reply', command  = lambda: game3(que_three))
+    question3.grid()
+    answer3.grid()
+    btn3.grid()
+    def game3(que_three):
+        if answer3.get().lower() == "barber":
+            messagebox.showinfo("You won!", "Great!")
+        else:
+            messagebox.showerror("Mistake!", "Try again!")
+
+que_one()
+root.mainloop()
